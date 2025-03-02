@@ -6,12 +6,12 @@ const config = {
     backgroundColor: "#000000",
     width: gameWidth,
     height: gameHeight,
-    scene: [Game, GameOver],
+    scene: [InitialPage, Regular, Hardcore, GameOver, WinPage, Impossible],
     physics: {
         default: 'arcade',
         arcade:{
             gravity: {y: 500},
-            debug: true
+            debug: false
         }
     }
 };
