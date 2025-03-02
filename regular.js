@@ -145,6 +145,7 @@ class Regular extends Phaser.Scene{
                         } else{
                             this.scene.stop('Game');
                             this.scene.start('GameOver');
+                            game.summer.stop();
                         }
                     }, this.interval)
                 }, this.interval)
