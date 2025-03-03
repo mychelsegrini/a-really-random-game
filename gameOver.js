@@ -11,7 +11,7 @@ class GameOver extends Phaser.Scene{
     create(){
 
        game.prelude = this.sound.add('prelude', {
-            volume: 6,
+            volume: 3,
             loop: false
         });
 
