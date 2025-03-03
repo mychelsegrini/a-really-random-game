@@ -26,6 +26,7 @@ class GameOver extends Phaser.Scene{
        });
 
        this.restart.on('pointerdown', () => {
+            game.prelude.stop();
             this.scene.stop('GameOver');
             this.scene.start('InitialPage');
        })

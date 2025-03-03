@@ -125,7 +125,7 @@ class Impossible extends Phaser.Scene{ //Class that represents the game's imposs
             this.pressed = true;
         }
 
-        if(!game.summer.isPlaying && this.dialogueHappened){ //Defines how the user wins the game.
+        if(!game.summer.isPlaying && this.dialogueScene == 17){ //Defines how the user wins the game.
             this.scene.stop('Game');
             this.scene.start('WinPage');
             game.summer.stop();
@@ -161,6 +161,7 @@ class Impossible extends Phaser.Scene{ //Class that represents the game's imposs
                             this.scene.stop('Game');
                             this.scene.start('GameOver');
                             game.summer.stop();
+                            this.dialogueScene = -1;
                         }
                     }, this.interval)
                 }, this.interval)
@@ -252,7 +253,6 @@ class Impossible extends Phaser.Scene{ //Class that represents the game's imposs
                 this.chopinGroup.setVisible(false); //Hides Chopin's group.
                 this.animateSquare(); //Starts animating the "space-time holes" recursively.
                 game.summer.play(); //Starts music.
-                this.dialogueHappened = true; //States the dialogue is finished.
                 this.playing.setVisible(true); //Unhides the warning about the music playing.
                 this.press.setVisible(false); //Hides instructions of dialogue management.
                 break;

@@ -24,7 +24,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
         this.square.body.setAllowGravity(false); //Turns gravity off for the square.
         this.square.setBounce(1); //Sets the square's mechanical energy must be conserved.
         this.square.setCollideWorldBounds(true); //Sets physical boundaries for the square
-        
+
         this.vivaldi = this.physics.add.image(gameWidth/2, 10, 'vivaldi').setScale(0.5); //Adds the player.
         this.vivaldi.setCollideWorldBounds(true); //Sets physical boundaries for the player.
 
@@ -96,15 +96,15 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
     update(){ //Updates the screen in a certain rate.
         if (this.dialogueScene == 17){ //Defines the movement of the player when the dialogue is over.
             if(this.keys.W.isDown || this.keys.up.isDown){ //Defines up movement.
-                this.vivaldi.setVelocityY(-180);
+                this.vivaldi.setVelocityY(-200);
             } else if(this.keys.S.isDown || this.keys.down.isDown){ //Defines down movement.
-                this.vivaldi.setVelocityY(180);
+                this.vivaldi.setVelocityY(200);
             }
 
             if (this.keys.D.isDown || this.keys.right.isDown){ //Defines right movement.
-                this.vivaldi.setVelocityX(180);
+                this.vivaldi.setVelocityX(200);
             } else if(this.keys.A.isDown || this.keys.left.isDown){ //Defines left movement.
-                this.vivaldi.setVelocityX(-180);
+                this.vivaldi.setVelocityX(-200);
             } else if (this.vivaldi.y >= (gameHeight - this.vivaldi.height/4)){
                 this.vivaldi.setVelocityX(0);
             }
@@ -126,7 +126,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
             this.pressed = true;
         }
 
-        if(!game.summer.isPlaying && this.dialogueHappened){ //Defines how the user wins the game.
+        if(!game.summer.isPlaying && this.dialogueScene == 17){ //Defines how the user wins the game.
             this.scene.stop('Game');
             this.scene.start('WinPage');
             game.summer.stop();
@@ -162,6 +162,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
                             this.scene.stop('Game');
                             this.scene.start('GameOver');
                             game.summer.stop();
+                            this.dialogueScene = -1;
                         }
                     }, this.interval)
                 }, this.interval)
