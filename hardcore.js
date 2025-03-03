@@ -19,6 +19,12 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
         this.back = this.add.image(gameWidth/2, gameHeight/2, 'bg').setScale(0.8); //Adds background.
         this.score = this.add.text(50, 50, "Your points: 0", {fontSize: '30px'}); //Adds score on the screen.
         this.points = 0; //Adds variable that stores points.
+
+        this.square = this.physics.add.image(0, 0, 'square'); //Adds square that serves as the space-time hole.
+        this.square.body.setAllowGravity(false); //Turns gravity off for the square.
+        this.square.setBounce(1); //Sets the square's mechanical energy must be conserved.
+        this.square.setCollideWorldBounds(true); //Sets physical boundaries for the square
+        
         this.vivaldi = this.physics.add.image(gameWidth/2, 10, 'vivaldi').setScale(0.5); //Adds the player.
         this.vivaldi.setCollideWorldBounds(true); //Sets physical boundaries for the player.
 
@@ -65,11 +71,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
 
         this.chopinGroup.addMultiple([this.chopin.name, this.chopin, this.chopin.chat, this.purpleRect1]); //Adds items to Chopin's group. 
         this.vivaldiGroup.addMultiple([this.realVivaldi, this.purpleRect2, this.realVivaldi.name, this.realVivaldi.chat]); //Adds items to Vivaldi's group for the dialogue.
- 
-        this.square = this.physics.add.image(0, 0, 'square'); //Adds square that serves as the space-time hole.
-        this.square.body.setAllowGravity(false); //Turns gravity off for the square.
-        this.square.setBounce(1); //Sets the square's mechanical energy must be conserved.
-        this.square.setCollideWorldBounds(true); //Sets physical boundaries for the square
+
 
         this.playing = this.add.text(650, 550,  "Playing Summer - Antonio Vivaldi", {fontSize: '15px', color: "#39ff14"}) //Adds warning about the music playing.
         
