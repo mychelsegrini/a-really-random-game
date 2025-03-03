@@ -129,8 +129,6 @@ class Regular extends Phaser.Scene{ //Class that represents the game's regular m
             game.summer.stop();
         }    
 
-        this.emitter.emitParticleAt(0, 0, 4);
-
 
     }
 
