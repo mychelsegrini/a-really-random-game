@@ -22,7 +22,7 @@ class Regular extends Phaser.Scene{ //Class that represents the game's regular m
 
         this.square = this.physics.add.image(0, 0, 'square'); //Adds square that serves as the space-time hole.
         this.square.body.setAllowGravity(false); //Turns gravity off for the square.
-        
+
         this.vivaldi = this.physics.add.image(gameWidth/2, 10, 'vivaldi').setScale(0.5); //Adds the player.
         this.vivaldi.setCollideWorldBounds(true); //Sets physical bounds for the player.
 
@@ -70,7 +70,6 @@ class Regular extends Phaser.Scene{ //Class that represents the game's regular m
         this.chopinGroup.addMultiple([this.chopin.name, this.chopin, this.chopin.chat, this.purpleRect1]); //Adds items to Chopin's group. 
         this.vivaldiGroup.addMultiple([this.realVivaldi, this.purpleRect2, this.realVivaldi.name, this.realVivaldi.chat]); //Adds items to Vivaldi's group for the dialogue.
  
-        
         this.playing = this.add.text(650, 550,  "Playing Summer - Antonio Vivaldi", {fontSize: '15px', color: "#39ff14"}) //Adds warning about the music playing.
         
         this.square.setVisible(false); //Turns the square invisible.
@@ -130,6 +129,7 @@ class Regular extends Phaser.Scene{ //Class that represents the game's regular m
             game.summer.stop();
         }    
 
+        this.emitter.emitParticleAt(0, 0, 4);
 
 
     }
@@ -162,7 +162,7 @@ class Regular extends Phaser.Scene{ //Class that represents the game's regular m
                     }, this.interval)
                 }, this.interval)
             }, this.interval)
-        }, this.interval);
+        }, this.interval); 
     }
 
     dialogue(){ //Sets the dialogue between Vivaldi and Chopin. Each case in the switch-case conditional structure represents a scene of the dialogue. This method is called whenever the user presses E or S.

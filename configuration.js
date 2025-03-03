@@ -6,7 +6,7 @@ const config = {
     backgroundColor: "#000000",
     width: gameWidth,
     height: gameHeight,
-    scene: [InitialPage, Regular, Hardcore, GameOver, WinPage, Impossible],
+    scene: [InitialPage, Regular, Hardcore, GameOver, WinPage, Impossible, Tutorial],
     physics: {
         default: 'arcade',
         arcade:{

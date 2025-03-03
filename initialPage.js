@@ -10,9 +10,10 @@ class InitialPage extends Phaser.Scene{
 
     create(){
         this.add.image(gameWidth/2 + 15, gameHeight/2 - 100, 'back').setScale(0.32)
-        this.regular = this.add.text(gameWidth/2 - 100, gameHeight/2 + 100, "Regular Mode", {fontSize: '30px'});
-        this.hardcore = this.add.text(gameWidth/2 - 108, gameHeight/2 + 150, "Hardcore Mode", {fontSize: '30px'});
-        this.impossible = this.add.text(gameWidth/2 - 125, gameHeight/2 + 200, "Impossible Mode", {fontSize: '30px'});
+        this.regular = this.add.text(gameWidth/2 - 100, gameHeight/2 + 85, "Regular Mode", {fontSize: '30px'});
+        this.hardcore = this.add.text(gameWidth/2 - 108, gameHeight/2 + 135, "Hardcore Mode", {fontSize: '30px'});
+        this.impossible = this.add.text(gameWidth/2 - 125, gameHeight/2 + 185, "Impossible Mode", {fontSize: '30px'});
+        this.tutorial = this.add.text(gameWidth/2 - 70, gameHeight/2 + 235, "Tutorial", {fontSize: '30px'});
 
         this.regular.setInteractive({
             useHandCursor: true
@@ -23,6 +24,10 @@ class InitialPage extends Phaser.Scene{
         });
 
         this.impossible.setInteractive({
+            useHandCursor: true
+        });
+
+        this.tutorial.setInteractive({
             useHandCursor: true
         });
 
@@ -51,6 +56,12 @@ class InitialPage extends Phaser.Scene{
         this.impossible.on('pointerdown', () => {
             this.scene.stop('InitialPage');
             this.scene.start('Impossible');
+            game.spring.stop();
+        })
+
+        this.tutorial.on('pointerdown', () => {
+            this.scene.stop('InitialPage');
+            this.scene.start('Tutorial');
             game.spring.stop();
         })
     }    
