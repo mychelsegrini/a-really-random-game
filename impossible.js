@@ -255,6 +255,7 @@ class Impossible extends Phaser.Scene{ //Class that represents the game's imposs
                 game.summer.play(); //Starts music.
                 this.playing.setVisible(true); //Unhides the warning about the music playing.
                 this.press.setVisible(false); //Hides instructions of dialogue management.
+                this.vivaldiGroup.setVisible(false); //Hides Vivaldi's group
                 break;
         }
     }
