@@ -50,7 +50,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
 
         this.chopin.name = this.add.text(this.chopin.x - 72, gameHeight/2 + 97, 'Frédéric Chopin'); //Adds Chopin's name as text.
         this.chopin.chat = this.add.text(340, 200, 'NO WAY. Not you, Vivaldi.', {fontSize: '30px', wordWrap: {width: 560}}); //Defines variable that stores Chopin's message in a scene of the dialogue.
-        this.press = this.add.text(gameWidth/2 - 120, gameHeight/2 + 100, "Press E to continue the dialogue or S to skip it."); //Adds instruction about keys E and S for dialogue management.
+        this.press = this.add.text(gameWidth/2 - 200, gameHeight/2 + 100, "Press E to continue the dialogue or S to skip it.", {fontSize: '15px'}); //Adds instruction about keys E and S for dialogue management.
 
         this.realVivaldi.name = this.add.text(this.realVivaldi.x - 72, gameHeight/2 + 97, 'Antonio Vivaldi'); //Adds Vivaldi's name as text.
         this.realVivaldi.chat = this.add.text(150, 200, 'Who are-', {fontSize: '30px',  wordWrap: {width: 560}}); //Defines variable that stores Vivaldi's message in a scene of the dialogue.
