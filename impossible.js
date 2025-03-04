@@ -88,22 +88,22 @@ class Impossible extends Phaser.Scene{ //Class that represents the game's imposs
             loop: false
         });
 
-        setTimeout(() => {this.dialogue()}, 1300); //Calls dialogue after 1.3 seconds (the time needed by the player to reach the ground).
+        this.dialogue(); //Calls dialogue.
 
     }
 
     update(){ //Updates the screen in a certain rate.
         if (this.dialogueScene == 17){ //Defines the movement of the player when the dialogue is over.
             if(this.keys.W.isDown || this.keys.up.isDown){ //Defines up movement.
-                this.vivaldi.setVelocityY(-180);
+                this.vivaldi.setVelocityY(-190);
             } else if(this.keys.S.isDown || this.keys.down.isDown){ //Defines down movement.
-                this.vivaldi.setVelocityY(180);
+                this.vivaldi.setVelocityY(200);
             }
 
             if (this.keys.D.isDown || this.keys.right.isDown){ //Defines right movement.
-                this.vivaldi.setVelocityX(180);
+                this.vivaldi.setVelocityX(190);
             } else if(this.keys.A.isDown || this.keys.left.isDown){ //Defines left movement.
-                this.vivaldi.setVelocityX(-180);
+                this.vivaldi.setVelocityX(-190);
             } else if (this.vivaldi.y >= (gameHeight - this.vivaldi.height/4)){
                 this.vivaldi.setVelocityX(0);
             }

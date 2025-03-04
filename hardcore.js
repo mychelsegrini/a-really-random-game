@@ -89,7 +89,7 @@ class Hardcore extends Phaser.Scene{ //Class that represents the game's hardcore
             loop: false
         });
 
-        setTimeout(() => {this.dialogue()}, 1300); //Calls dialogue after 1.3 seconds (the time needed by the player to reach the ground).
+       this.dialogue(); //Calls dialogue.
 
     }
 
